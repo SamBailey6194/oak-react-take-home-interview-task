@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+/**
+ * Due to changes in React 17+ this file needed editing to handle
+ * the fact we used useEffect and useState instead of React when importing
+ */
 
-test('renders learn react link', () => {
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+
+test("renders the app with a loading state", () => {
+  global.fetch = jest.fn(() => new Promise(() => {}));
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/loading/i)).toBeInTheDocument();
 });
