@@ -1,0 +1,63 @@
+{
+  "units": [
+    {
+      "id": 1,
+      "title": "Trigonometry 1",
+      "unitInfo": {
+        "subject": "maths",
+        "keyStage": "Key Stage 4"
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "unitId": 2,
+      "id": 1,
+      "title": "Using the sine rule",
+      "orderInUnit": 1,
+      "learningObjectives": []
+    },
+    {
+      "unitId": 1,
+      "id": 1,
+      "title": "Use tangent to find a length",
+      "recommendedOrderInUnit": 2,
+      "learningObjectives": [
+        "In this lesson we'll learn how to correctly label a right-angled triangle"
+      ]
+    },
+    {
+      "unitId": 1,
+      "id": 1,
+      "title": "Use sine and cosine to find a length",
+      "recommendedOrderInUnit": 3,
+      "learningObjectives": [
+        "In this lesson, we will calculate missing lengths using sine and cosine trigonometric ratios."
+      ]
+    },
+    {
+      "unitId": 1,
+      "id": 1,
+      "title": "Know tangent, sine and cosine",
+      "recommendedOrderInUnit": 4,
+      "learningObjectives": [
+        "In this lesson, we will learn how to correctly label a right-angled triangle, and identify the correct trigonometric ratio to use."
+      ]
+    },
+    {
+      "unitId": 1,
+      "id": 1,
+      "title": "Applying trigonometry",
+      "recommendedOrderInUnit": 1,
+      "learningObjectives": []
+    },
+
+    {
+      "unitId": 2,
+      "id": 3,
+      "title": "Calculating angles with sine",
+      "orderInUnit": 1,
+      "learningObjectives": []
+    }
+  ]
+}
