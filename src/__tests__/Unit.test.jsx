@@ -1,12 +1,11 @@
-//**
-// This file is focused on testing the Unit.jsx file for the API fetch calls.
-//
-// It tests for:
-// - Loading State
-// - Successful fetches
-// - Error state
-//
-//  */
+/**
+ * This file is focused on testing the Unit.jsx file for the API fetch calls.
+ *
+ * It tests for:
+ * - Loading State
+ * - Successful fetches
+ * - Error state
+ */
 
 import { render, screen, waitFor } from "@testing-library/react";
 import Unit from "../Unit";
@@ -184,7 +183,7 @@ describe("Unit - Phase 1: Data Fetching", () => {
       renderUnit();
 
       await waitFor(() => {
-        expect(screen.getByText("alert")).toBeInTheDocument();
+        expect(screen.getByRole("alert")).toBeInTheDocument();
       });
     });
   });
