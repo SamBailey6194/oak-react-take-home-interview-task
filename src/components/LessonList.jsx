@@ -1,5 +1,5 @@
 /**
- * Reuseable component card for Lesson
+ * Reuseable component list for Lesson
  *
  * This follows DRY principles and helps with maintainability
  *

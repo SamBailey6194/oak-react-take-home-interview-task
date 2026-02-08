@@ -52,7 +52,7 @@ const mockLessons = [
 const renderLessonList = () => render(<LessonList lessons={mockLessons} />);
 
 describe("LessonList - Phase 3: Lesson Information Display", () => {
-  describe("Unit title", () => {
+  describe("Lesson count", () => {
     it("displays the number of lessons", () => {
       renderLessonList();
       expect(screen.getByText(/4 lessons/i)).toBeInTheDocument();
