@@ -30,7 +30,7 @@ describe("Unit title", () => {
     const heading = screen.getByRole("heading", {
       name: "Trigonometry 1",
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 
   it("renders the unit title as a h1", () => {
@@ -39,7 +39,7 @@ describe("Unit title", () => {
       name: "Trigonometry 1",
       level: 1,
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 });
 
@@ -49,7 +49,7 @@ describe("Key Stage", () => {
     const heading = screen.getByRole("heading", {
       name: /key stage 4/i,
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 
   it("renders the key stage as a h2", () => {
@@ -58,7 +58,7 @@ describe("Key Stage", () => {
       name: /key stage 4/i,
       level: 2,
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 });
 
@@ -68,7 +68,7 @@ describe("Subject", () => {
     const heading = screen.getByRole("heading", {
       name: /maths/i,
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 
   it("renders the subject as a h2", () => {
@@ -77,13 +77,13 @@ describe("Subject", () => {
       name: /maths/i,
       level: 2,
     });
-    expect(heading).toBeInDocument();
+    expect(heading).toBeInTheDocument();
   });
 });
 
 describe("Accessibility", () => {
   it("wraps unit information in a header element", () => {
     renderUnitHeader();
-    expect(screen.getByRole("banner")).toBeInDocument();
+    expect(screen.getByRole("banner")).toBeInTheDocument();
   });
 });
