@@ -22,65 +22,68 @@ const mockUnit = {
   },
 };
 
-describe("UnitHeader - Phase 2: Unit Information Display", () => {
-  beforeEach(() => {
-    render(<UnitHeader unit={mockUnit} />);
+const renderUnitHeader = () => render(<UnitHeader unit={mockUnit} />);
+
+describe("Unit title", () => {
+  it("displays the unit title as a heading", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: "Trigonometry 1",
+    });
+    expect(heading).toBeInDocument();
   });
 
-  describe("Unit title", () => {
-    it("displays the unit title as a heading", () => {
-      const heading = screen.getByRole("heading", {
-        name: "Trigonometry 1",
-      });
-      expect(heading).toBeInDocument();
+  it("renders the unit title as a h1", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: "Trigonometry 1",
+      level: 1,
     });
+    expect(heading).toBeInDocument();
+  });
+});
 
-    it("renders the unit title as a h1", () => {
-      const heading = screen.getByRole("heading", {
-        name: "Trigonometry 1",
-        level: 1,
-      });
-      expect(heading).toBeInDocument();
+describe("Key Stage", () => {
+  it("displays the key stage as a heading", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: /key stage 4/i,
     });
+    expect(heading).toBeInDocument();
   });
 
-  describe("Key Stage", () => {
-    it("displays the key stage as a heading", () => {
-      const heading = screen.getByRole("heading", {
-        name: /key stage 4/i,
-      });
-      expect(heading).toBeInDocument();
+  it("renders the key stage as a h2", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: /key stage 4/i,
+      level: 2,
     });
+    expect(heading).toBeInDocument();
+  });
+});
 
-    it("renders the key stage as a h2", () => {
-      const heading = screen.getByRole("heading", {
-        name: /key stage 4/i,
-        level: 2,
-      });
-      expect(heading).toBeInDocument();
+describe("Subject", () => {
+  it("displays the subject as a heading", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: /maths/i,
     });
+    expect(heading).toBeInDocument();
   });
 
-  describe("Subject", () => {
-    it("displays the subject as a heading", () => {
-      const heading = screen.getByRole("heading", {
-        name: /maths/i,
-      });
-      expect(heading).toBeInDocument();
+  it("renders the subject as a h2", () => {
+    renderUnitHeader();
+    const heading = screen.getByRole("heading", {
+      name: /maths/i,
+      level: 2,
     });
-
-    it("renders the subject as a h2", () => {
-      const heading = screen.getByRole("heading", {
-        name: /maths/i,
-        level: 2,
-      });
-      expect(heading).toBeInDocument();
-    });
+    expect(heading).toBeInDocument();
   });
+});
 
-  describe("Accessibility", () => {
-    it("wraps unit information in a header element", () => {
-      expect(screen.getByRole("banner")).toBeInDocument();
-    });
+describe("Accessibility", () => {
+  it("wraps unit information in a header element", () => {
+    renderUnitHeader();
+    expect(screen.getByRole("banner")).toBeInDocument();
   });
 });
