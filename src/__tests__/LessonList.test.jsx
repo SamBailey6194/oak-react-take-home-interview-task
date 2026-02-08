@@ -78,28 +78,32 @@ describe("LessonList - Phase 3: Lesson Information Display", () => {
   describe("Lesson ordering", () => {
     it("renders lessons sorted by recommendedOrderInUnit", () => {
       renderLessonList();
-      const listItems = screen.getAllByRole("listitem");
+      const headings = screen.getAllByRole("heading", {
+        level: 3,
+      });
 
       // First lesson should be "Applying trigonometry" (order: 1)
-      expect(listItems[0]).toHaveTextContent("Applying trigonometry");
+      expect(headings[0]).toHaveTextContent("Applying trigonometry");
 
       // Second lesson should be "Use tangent to find a length" (order: 2)
-      expect(listItems[1]).toHaveTextContent("Use tangent to find a length");
+      expect(headings[1]).toHaveTextContent("Use tangent to find a length");
 
       // Third lesson should be "Use sine and cosine to find a length" (order: 3)
-      expect(listItems[2]).toHaveTextContent(
+      expect(headings[2]).toHaveTextContent(
         "Use sine and cosine to find a length"
       );
 
       // Fourth lesson should be "Know tangent, sine and cosine" (order: 4)
-      expect(listItems[3]).toHaveTextContent("Know tangent, sine and cosine");
+      expect(headings[3]).toHaveTextContent("Know tangent, sine and cosine");
     });
   });
 
   describe("Accessibility", () => {
     it("renders lessons in an ordered list", () => {
       renderLessonList();
-      expect(screen.getByRole("list")).toBeInTheDocument();
+      const lists = screen.getAllByRole("list");
+      const orderedList = lists.find((list) => list.tagName === "OL");
+      expect(orderedList).toBeInTheDocument();
     });
 
     it("wraps section with accessible lable", () => {
