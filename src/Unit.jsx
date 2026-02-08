@@ -17,6 +17,8 @@
  */
 
 import { useState, useEffect } from "react";
+import UnitHeader from "./components/UnitHeader";
+import LessonList from "./components/LessonList";
 
 // Function to fetch the API data and handle loading state and error state gracefully
 function Unit({ unitId }) {
@@ -62,10 +64,8 @@ function Unit({ unitId }) {
 
   return (
     <main>
-      <h1>{unit.title}</h1>
-      {lessons.map((lesson) => (
-        <p key={lesson.recommendedOrderInUnit}>{lesson.title}</p>
-      ))}
+      <UnitHeader unit={unit} />
+      <LessonList lessons={lessons} />
     </main>
   );
 }
