@@ -1,8 +1,8 @@
 /**
  * File to fetch the API calls to retireve the JSON data for Units and Lessons
  *
- * Makes an API Fetch call to localhost:3001/units/$(unitId)
- * and localhost:3001/units/$(unitId)/lesson
+ * Makes an API Fetch call to (`localhost:3001/units/${unitId}`)
+ * and (`localhost:3001/units/${unitId}/lesson`)
  *
  * This makes the code reuseable as more units and lessons are added to the JSON API data
  *
