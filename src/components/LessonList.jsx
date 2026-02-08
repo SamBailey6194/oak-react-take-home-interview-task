@@ -16,7 +16,7 @@ function LessonList({ lessons }) {
   );
 
   return (
-    <section aria-label="Lessons">
+    <section id="lessons" aria-label="Lessons">
       <p>This unit has {lessons.length} lessons</p>
       <ol>
         {sortedLessons.map((lesson) => (

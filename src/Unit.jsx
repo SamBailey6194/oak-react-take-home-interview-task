@@ -55,15 +55,26 @@ function Unit({ unitId }) {
   }, [unitId]);
 
   if (loading) {
-    return <div role="status">Loading unit information...</div>;
+    return (
+      <div role="status" aria-live="polite">
+        Loading unit information...
+      </div>
+    );
   }
 
   if (error) {
-    return <div role="alert">Error: {error}</div>;
+    return (
+      <div role="alert" aria-live="assertive">
+        Error: {error}
+      </div>
+    );
   }
 
   return (
     <main>
+      <a href="#lessons" className="skip-link">
+        Skip to lessons
+      </a>
       <UnitHeader unit={unit} />
       <LessonList lessons={lessons} />
     </main>

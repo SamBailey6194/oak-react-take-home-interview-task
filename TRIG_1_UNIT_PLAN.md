@@ -6,10 +6,10 @@ Build in `Units.jsx` a page that fetches data from two local endpoints and displ
 
 | Phase                           | Goal                                                                              | Completed |
 | ------------------------------- | --------------------------------------------------------------------------------- | --------- |
-| 1 - Data Fetching               | Fetch Unit and lesson data from the JSON server                                   | N         |
-| 2 - Unit Information Display    | Meet the "Units Information" acceptance criteria                                  | N         |
-| 3 - Lessons Information Display | Meet the "Lessons Information" acceptance criteria                                |
-| 4 - Accessibility               | Ensure page is readable by someone with visual impairment                         | N         |
+| 1 - Data Fetching               | Fetch Unit and lesson data from the JSON server                                   | Y         |
+| 2 - Unit Information Display    | Meet the "Units Information" acceptance criteria                                  | Y         |
+| 3 - Lessons Information Display | Meet the "Lessons Information" acceptance criteria                                | Y         |
+| 4 - Accessibility               | Ensure page is readable by someone with visual impairment                         | Y         |
 | 5 - Polish & Review             | Check Styling, Error Handling, Code Quality, Automated Tests Pass, Manual Testing | N         |
 
 ## Steps to follow
