@@ -70,7 +70,7 @@ describe("LessonList - Phase 3: Lesson Information Display", () => {
         screen.getByText("Use sine and cosine to find a length")
       ).toBeInTheDocument();
       expect(
-        screen.getByText("Know tangent,sine and cosine")
+        screen.getByText("Know tangent, sine and cosine")
       ).toBeInTheDocument();
     });
   });
@@ -78,7 +78,7 @@ describe("LessonList - Phase 3: Lesson Information Display", () => {
   describe("Lesson ordering", () => {
     it("renders lessons sorted by recommendedOrderInUnit", () => {
       renderLessonList();
-      const listItems = screen.getAllByRole("listItem");
+      const listItems = screen.getAllByRole("listitem");
 
       // First lesson should be "Applying trigonometry" (order: 1)
       expect(listItems[0]).toHaveTextContent("Applying trigonometry");
@@ -88,7 +88,7 @@ describe("LessonList - Phase 3: Lesson Information Display", () => {
 
       // Third lesson should be "Use sine and cosine to find a length" (order: 3)
       expect(listItems[2]).toHaveTextContent(
-        "USe sine and cosine to find a length"
+        "Use sine and cosine to find a length"
       );
 
       // Fourth lesson should be "Know tangent, sine and cosine" (order: 4)
