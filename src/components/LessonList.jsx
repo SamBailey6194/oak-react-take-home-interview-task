@@ -7,19 +7,32 @@
  *
  * Receives lessons array as a prop from Unit.jsx
  */
-
+import { useState } from "react";
 import LessonCard from "./LessonCard";
 
 function LessonList({ lessons }) {
-  const sortedLessons = [...lessons].sort(
-    (a, b) => a.recommendedOrderInUnit - b.recommendedOrderInUnit
-  );
+  const [useRecommendedOrder, setUseRecommendedOrder] = useState(true);
+
+  const displayedLessons = useRecommendedOrder
+    ? [...lessons].sort(
+        (a, b) => a.recommendedOrderInUnit - b.recommendedOrderInUnit
+      )
+    : lessons;
+
+  const toggleOrder = () => {
+    setUseRecommendedOrder((prev) => !prev);
+  };
 
   return (
     <section id="lessons" aria-label="Lessons">
       <p>This unit has {lessons.length} lessons</p>
+      <button onClick={toggleOrder} aria-live="polite">
+        {useRecommendedOrder
+          ? "Show in API Order"
+          : "Show in recommended order"}
+      </button>
       <ol>
-        {sortedLessons.map((lesson) => (
+        {displayedLessons.map((lesson) => (
           <li key={lesson.recommendedOrderInUnit}>
             <LessonCard lesson={lesson} />
           </li>
